@@ -1,0 +1,9 @@
+#!/bin/bash
+list=$(find . -name '*.log')
+for file in $list 
+do
+	sed -i '' '/password/d' $file
+done
+tar -zcvf archive.tar.gz $list
+rm $list
+

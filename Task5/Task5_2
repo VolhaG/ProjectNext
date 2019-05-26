@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Find process with parametert $1 and kill it by PID
+pid=$(pgrep -f $1)
+kill -9 $pid
