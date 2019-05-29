@@ -16,6 +16,7 @@ import tools.Product;
 import pages.offer.Seller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class OnlinerTests {
 
@@ -28,8 +29,9 @@ public class OnlinerTests {
         System.setProperty("webdriver.chrome.driver", "/Users/Olya/Applications/chromedriver");
 
         webDriver = new ChromeDriver();
+        webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        webDriver.navigate().to("https://catalog.onliner.by/");
+        webDriver.get("https://catalog.onliner.by/");
         logger.info("Navigate to catalog.onliner.by");
     }
 
@@ -72,7 +74,7 @@ public class OnlinerTests {
         }
         String productName = videoCardPage.findProductNameWithCheapestPrice(productsWithRating);
 
-        logger.info("Popular product with rating upper 4.5 stars and the cheapest price:"+ productName);
+        logger.info("Popular product name with rating upper 4.5 stars and the cheapest price: "+ productName);
 
 
         /*4. На странице предложений найти продавца с наименьшей ценой за товар.

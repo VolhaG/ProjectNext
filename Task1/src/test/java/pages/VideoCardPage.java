@@ -9,7 +9,10 @@ import pages.offer.OfferPage;
 import tools.Product;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Double.parseDouble;
 
 public class VideoCardPage extends BasePage {
 
@@ -89,7 +92,7 @@ public class VideoCardPage extends BasePage {
     }
 
     public List<Product> initListWithProducts() {
-        List<Product> products = null;
+        List<Product> products = new ArrayList<Product>();
         String nameProduct;
         String ratingProduct;
         Double priceProduct;
@@ -97,11 +100,30 @@ public class VideoCardPage extends BasePage {
 
         List<WebElement> elements = webDriver.findElements(By.xpath("//div[@class=\"schema-product__group\"]"));
         for (WebElement item : elements) {
+            nameProduct = "";
+            ratingProduct = "";
+            priceProduct = 0.0;
+            offersProduct = null;
+
             Product product = new Product();
             nameProduct = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_4\"]/div[@class=\"schema-product__title\"]/a/span")).getText();
-            ratingProduct = detectRating(item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_4\"]/*/div[@class=\"schema-product__rating-group\"]/a[@class=\"schema-product__rating\"]/span")).getAttribute("class"));
-            priceProduct = detectPrice(item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/*/div[@class=\"schema-product__price\"]/a/span")).getText());
-            offersProduct = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/*/div[@class=\"schema-product__offers\"]/a"));
+            try {
+                WebElement ratingElement = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_4\"]/div[@class=\"schema-product__info\"]/div[@class=\"schema-product__rating-group\"]/a[@class=\"schema-product__rating\"]/span"));
+                ratingProduct = detectRating(ratingElement.getAttribute("class"));
+            } catch (Exception e) {
+            }
+
+            try {
+            priceProduct = detectPrice(item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/div/div/div[@class=\"schema-product__price\"]/a/span")).getText());
+            }
+            catch (Exception e){
+            }
+
+            try {
+                offersProduct = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/div/div/div[@class=\"schema-product__offers\"]/a"));
+            }
+            catch (Exception e) {
+            }
 
             product.name = nameProduct;
             product.rating = ratingProduct;
@@ -114,25 +136,26 @@ public class VideoCardPage extends BasePage {
     }
 
     private Double detectPrice(String text) {
-        return Double.parseDouble(text);
+        text = text.replace(" р.","");
+        text = text.replace(",",".");
+        return parseDouble(text);
     }
 
     private String detectRating(String text) {
-        Integer symbol1 = text.length() - 1;
-        Integer symbol2 = text.length();
-        String rating = text.substring(symbol1, symbol2);
+        Integer symbol1 = text.length() - 2;
+        String rating = text.substring(symbol1);
         return rating;
     }
 
     public List<Product> productsListSelectedByRating(List<Product> products, String s) {
-        List<Product> newProducts = null;
-        if (s.equals("45")) {
-            for (Product item : products) {
-                if (item.rating.equals("s")) {
-                    newProducts.add(item);
-                }
+        List<Product> newProducts = new ArrayList<Product>();
+
+        for (Product item : products) {
+            if (item.rating.equals("s")) {
+                newProducts.add(item);
             }
         }
+
         return newProducts;
     }
 

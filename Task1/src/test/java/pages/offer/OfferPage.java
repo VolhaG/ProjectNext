@@ -8,6 +8,7 @@ import pages.SellerPage;
 import tools.Product;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OfferPage extends BasePage {
@@ -23,7 +24,7 @@ public class OfferPage extends BasePage {
     }
 
     public List<Seller> getSellers() {
-        List<Seller> listSellers = null;
+        List<Seller> listSellers = new ArrayList<Seller>();
         List<WebElement> elements = webDriver.findElements(By.xpath("//tr[@class=\"marked state_add-to-cart m-divider\"]"));
         for (WebElement item : elements) {
             WebElement foundRefSeller = item.findElement(By.xpath("./td[@class=\"b-cell-4\"]/div[@class=\"b-cell-4__line-1\"]/a[@class=\"logo\"]/img"));
