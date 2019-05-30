@@ -1,6 +1,6 @@
-package tools;
+package onliner.tools;
 
-import pages.offer.Seller;
+import onliner.pages.offer.Seller;
 
 import java.util.List;
 

@@ -1,12 +1,13 @@
-package pages;
+package onliner.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import pages.offer.OfferPage;
-import tools.Product;
+import onliner.pages.offer.OfferPage;
+import onliner.tools.Product;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -59,24 +60,18 @@ public class VideoCardPage extends BasePage {
         Actions actions = new Actions(webDriver);
         actions.moveToElement(elementToSroll);
         actions.perform();
+        sleep(1_000);
         typeOfVC.click();
     }
 
-    public OfferPage navigateToOfferPage() {
-        initButtonOfferPage();
-        buttonOfferPage.click();
-        Product product = initProduct();
+    public OfferPage navigateToOfferPageOfProduct(Product product) {
+        logger.debug("Navigate to: " + product);
+
+        performClick(product.offers);
+
         OfferPage offerPage = new OfferPage(webDriver);
         offerPage.product = product;
         return offerPage;
-    }
-
-    private Product initProduct() {
-        return new Product();
-    }
-
-    public void initButtonOfferPage() {
-
     }
 
     public String findProductNameWithCheapestPrice(List<Product> products) {
@@ -91,53 +86,54 @@ public class VideoCardPage extends BasePage {
         return name;
     }
 
-    public List<Product> initListWithProducts() {
-        List<Product> products = new ArrayList<Product>();
-        String nameProduct;
-        String ratingProduct;
-        Double priceProduct;
-        WebElement offersProduct;
+    public Product findProductWithCheapestPrice(List<Product> products) {
+        Double minPrice = Double.MAX_VALUE;
+        Product product = null;
+        for (Product element : products) {
+            if (element.price < minPrice) {
+                minPrice = element.price;
+                product = element;
+            }
+        }
+        return product;
+    }
 
+
+    public List<Product> getProducts() {
+        logger.debug("Collecting products...");
+
+        List<Product> products = new ArrayList<>();
         List<WebElement> elements = webDriver.findElements(By.xpath("//div[@class=\"schema-product__group\"]"));
+        logger.debug("Found " + elements.size() + " products");
+
         for (WebElement item : elements) {
-            nameProduct = "";
-            ratingProduct = "";
-            priceProduct = 0.0;
-            offersProduct = null;
+            String nameProduct = item.findElement(By.xpath(".//div[@class=\"schema-product__title\"]/a/span")).getText();
+            logger.debug("Name: " + nameProduct);
+            Double priceProduct = detectPrice(item.findElement(By.xpath(".//div[@class=\"schema-product__price\"]/a/span")).getText());
+            String ratingProduct = getProductRating(item);
+            WebElement offersProduct = item.findElement(By.xpath(".//div[@class=\"schema-product__offers\"]/a"));
 
-            Product product = new Product();
-            nameProduct = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_4\"]/div[@class=\"schema-product__title\"]/a/span")).getText();
-            try {
-                WebElement ratingElement = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_4\"]/div[@class=\"schema-product__info\"]/div[@class=\"schema-product__rating-group\"]/a[@class=\"schema-product__rating\"]/span"));
-                ratingProduct = detectRating(ratingElement.getAttribute("class"));
-            } catch (Exception e) {
-            }
-
-            try {
-            priceProduct = detectPrice(item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/div/div/div[@class=\"schema-product__price\"]/a/span")).getText());
-            }
-            catch (Exception e){
-            }
-
-            try {
-                offersProduct = item.findElement(By.xpath(".//*/div[@class=\"schema-product__part schema-product__part_3\"]/div/div/div[@class=\"schema-product__offers\"]/a"));
-            }
-            catch (Exception e) {
-            }
-
-            product.name = nameProduct;
-            product.rating = ratingProduct;
-            product.price = priceProduct;
-            product.offers = offersProduct;
+            Product product = new Product(nameProduct, ratingProduct, priceProduct, offersProduct);
             products.add(product);
+            logger.debug("New product added: " + product);
         }
 
         return products;
     }
 
+    private String getProductRating(WebElement productElem) {
+        try {
+            WebElement ratingElement = productElem.findElement(By.xpath(".//a[@class=\"schema-product__rating\"]/span"));
+            return detectRating(ratingElement.getAttribute("class"));
+        } catch (NoSuchElementException exc) {
+            logger.debug("No rating found");
+            return "";
+        }
+    }
+
     private Double detectPrice(String text) {
-        text = text.replace(" р.","");
-        text = text.replace(",",".");
+        text = text.replace(" р.", "");
+        text = text.replace(",", ".");
         return parseDouble(text);
     }
 
@@ -147,12 +143,13 @@ public class VideoCardPage extends BasePage {
         return rating;
     }
 
-    public List<Product> productsListSelectedByRating(List<Product> products, String s) {
+    public List<Product> productsSelectedByRating(List<Product> products, String s) {
         List<Product> newProducts = new ArrayList<Product>();
 
         for (Product item : products) {
-            if (item.rating.equals("s")) {
+            if (item.rating.equals(s)) {
                 newProducts.add(item);
+                logger.debug("Product selected by rating: " + item.name);
             }
         }
 
