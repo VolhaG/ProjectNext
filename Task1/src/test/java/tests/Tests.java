@@ -1,9 +1,7 @@
 package tests;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
@@ -15,6 +13,8 @@ import onliner.pages.VideoCardPage;
 import onliner.tools.OfferPageHelper;
 import onliner.tools.Product;
 import onliner.pages.offer.Seller;
+import tutby.pages.FirstPage;
+import tutby.pages.ResultPage;
 
 import java.io.IOException;
 import java.util.List;
@@ -126,11 +126,14 @@ public class Tests {
         logger.info("Task 1");
         webDriver.get("https://tut.by/");
         logger.info("Navigate to tut.by");
-        WebElement search = webDriver.findElement(By.xpath(""));
-        search.sendKeys("лукашенко");
 
-        WebElement startSearch = webDriver.findElement(By.xpath(""));
-        startSearch.click();
+        FirstPage firstPage = new FirstPage(webDriver);
+        firstPage.enterWordForSearch("лукашенко");
+
+        ResultPage resultPage = firstPage.navigateToResultPage();
+        String text1 = resultPage.getNameOfFirstResult();
+        logger.info("First result of searching with selenium: "+ text1);
+
     }
 
     @Test

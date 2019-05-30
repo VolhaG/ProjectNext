@@ -8,12 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import javax.annotation.Nonnull;
 
-public abstract class BasePage {
+public abstract class InitPage {
 
     protected final WebDriver webDriver;
     protected final Logger logger;
 
-    protected BasePage(@Nonnull WebDriver driver) {
+    protected InitPage(@Nonnull WebDriver driver) {
         webDriver = driver;
         logger = LogManager.getLogger(this.getClass());
         PageFactory.initElements(webDriver, this);
