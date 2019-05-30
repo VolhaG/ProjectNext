@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01529a6a-6134-4322-8de6-cd3a31cae214" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tutby/pages/ResultPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chrome_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chrome_test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tutby/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tutby/InitPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tutby/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tutby/pages/FirstPage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+            <state relative-caret-position="424">
+              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5061#5062#0" expanded="true" />
@@ -97,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/onliner/pages/offer/OfferPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/tutby/pages/FirstPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#575#576#0" expanded="true" />
@@ -145,15 +142,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tutby/pages/ResultPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="62" />
+            <state relative-caret-position="330">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#214#215#0" expanded="true" />
                 <element signature="e#243#244#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,7 +174,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/firefox_test.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -195,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -243,7 +242,6 @@
         <option value="$PROJECT_DIR$/src/test/java/pages/VideoCardPage.java" />
         <option value="$PROJECT_DIR$/configs/TestNG.xml" />
         <option value="$PROJECT_DIR$/src/test/java/firefox_test.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/chrome_test.xml" />
         <option value="$PROJECT_DIR$/src/test/java/onliner/tutby/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/onliner/tutby/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tutby/BasePage.java" />
@@ -251,8 +249,9 @@
         <option value="$PROJECT_DIR$/src/test/java/tutby/InitPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tutby/pages/ResultSearchPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tutby/pages/FirstPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/Tests.java" />
         <option value="$PROJECT_DIR$/src/test/java/tutby/pages/ResultPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/Tests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chrome_test.xml" />
       </list>
     </option>
   </component>
@@ -360,7 +359,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559217062930" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559220780224" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -390,7 +389,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Tests.test5">
+  <component name="RunManager" selected="TestNG.Tests.test1">
     <configuration name="Task1 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -410,7 +409,54 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests.test3" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="TaskNext" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="TaskNext" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="next.task.test" />
       <extension name="coverage">
         <pattern>
@@ -420,7 +466,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Tests" />
-      <option name="METHOD_NAME" value="test3" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -447,7 +493,7 @@
       </method>
     </configuration>
     <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/configs/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="next.task" />
+      <module name="TaskNext" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/configs/TestNG.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
@@ -478,11 +524,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Tests.test1" />
         <item itemvalue="TestNG.Tests.test5" />
         <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" />
         <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/TestNG.xml" />
         <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/configs/TestNG.xml" />
-        <item itemvalue="TestNG.Tests.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -588,7 +634,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/tests/Tests.java</url>
-          <line>139</line>
+          <line>140</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
@@ -859,14 +905,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/firefox_test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -883,7 +922,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/onliner/pages/offer/OfferPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -923,7 +962,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/tutby/pages/FirstPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#575#576#0" expanded="true" />
@@ -934,26 +973,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5061#5062#0" expanded="true" />
-            <element signature="e#5093#5094#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tutby/pages/ResultPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="62" />
+        <state relative-caret-position="330">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#214#215#0" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5061#5062#0" expanded="true" />
+            <element signature="e#5093#5094#0" expanded="true" />
           </folding>
         </state>
       </provider>

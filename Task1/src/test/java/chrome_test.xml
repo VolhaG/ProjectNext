@@ -2,6 +2,8 @@
 <suite name="Suite1" verbose="1" >
     <test name="Chrome Test" >
         <parameter name="browser" value="chrome"/>
+        <parameter name="rating" value="45"/>
+        <parameter name="scriptParameter" value=""/>
         <classes>
             <class name="tests.Tests" />
         </classes>
