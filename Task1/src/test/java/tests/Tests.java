@@ -141,17 +141,10 @@ public class Tests {
 
         final String scriptPath = "./src/Task5/";
 
-        String script = "Task5_1.sh";
-        try {
-            ProcessBuilder pb = new ProcessBuilder("/bin/bash", scriptPath + script, "","");
-            Process p = pb.start();
-            p.waitFor();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        String script1 = "Task5_1.sh";
+        runScript(scriptPath + script1);
+        String script2 = "Task5_1.sh";
+        runScript(scriptPath + script2);
 
     }
 
@@ -178,6 +171,19 @@ public class Tests {
         logger.info("First result of searching with selenium: "+ textSearch1);
         return textSearch1;
 
+    }
+
+    private void runScript(String script) {
+        try {
+            ProcessBuilder pb = new ProcessBuilder("/bin/bash", script, "","");
+            Process p = pb.start();
+            p.waitFor();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
