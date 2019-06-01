@@ -1,24 +1,39 @@
 package tests;
 
+import onliner.pages.MainPage;
+import onliner.pages.SellerPage;
+import onliner.pages.VideoCardPage;
+import onliner.pages.offer.OfferPage;
+import onliner.pages.offer.Seller;
+import onliner.tools.OfferPageHelper;
+import onliner.tools.Product;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-import org.apache.logging.log4j.LogManager;
-import onliner.pages.MainPage;
-import onliner.pages.offer.OfferPage;
-import onliner.pages.SellerPage;
-import onliner.pages.VideoCardPage;
-import onliner.tools.OfferPageHelper;
-import onliner.tools.Product;
-import onliner.pages.offer.Seller;
 import tutby.pages.FirstPage;
 import tutby.pages.ResultPage;
 
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import javax.swing.text.html.HTML;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.jsoup.nodes.Document;
+
+
+//import static sun.corba.Bridge.get;
+import org.jsoup.nodes.Element;
 
 public class Tests {
 
@@ -42,7 +57,7 @@ public class Tests {
 
     }
 
-    @Test( description = "Task 3: test case for onliner", priority = 3 , parameters = {"rating", "b"}, enabled = false)
+    @Test(description = "Task 3: test case for onliner", priority = 3 , parameters = {"rating", "b"}, enabled = false)
     public void test3(String rating) throws InterruptedException {
         /*
         1.осуществить переход (используя интерфейс страницы***):
@@ -116,9 +131,37 @@ public class Tests {
         }
     }
 
-
-    @Test(alwaysRun = true, description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1)
+    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1)
     public void test1() {
+       getTextSearch1();
+    }
+
+    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = false)
+    public void test5(String sriptParameter)  {
+
+        final String scriptPath = "/users/Olya/Projects/";
+
+        String script = "clean.sh";
+        try {
+            ProcessBuilder pb = new ProcessBuilder("/bin/bash", scriptPath + script, "","");
+            Process p = pb.start();
+            p.waitFor();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @AfterMethod
+    public void afterTest() {
+        webDriver.quit();
+    }
+
+
+    public String getTextSearch1() {
         /*
         1.осуществить переход (используя интерфейс страницы***):
         "Компьютеры и сети"->"Комплектующие"->"Видеокарты"
@@ -131,20 +174,10 @@ public class Tests {
         firstPage.enterWordForSearch("лукашенко");
 
         ResultPage resultPage = firstPage.navigateToResultPage();
-        String text1 = resultPage.getNameOfFirstResult();
-        logger.info("First result of searching with selenium: "+ text1);
+        String textSearch1 = resultPage.getNameOfFirstResult();
+        logger.info("First result of searching with selenium: "+ textSearch1);
+        return textSearch1;
 
     }
-
-    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = false)
-    public void test5(String sriptParameter) throws IOException {
-        Runtime.getRuntime().exec("whoami");
-    }
-
-    @AfterMethod
-    public void afterTest() {
-        webDriver.quit();
-    }
-
-
+    
 }
