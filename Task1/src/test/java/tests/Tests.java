@@ -57,7 +57,7 @@ public class Tests {
 
     }
 
-    @Test(description = "Task 3: test case for onliner", priority = 3 , parameters = {"rating", "b"}, enabled = false)
+    @Test(description = "Task 3: test case for onliner", priority = 3 , parameters = {"rating"}, enabled = false)
     public void test3(String rating) throws InterruptedException {
         /*
         1.осуществить переход (используя интерфейс страницы***):
@@ -131,17 +131,17 @@ public class Tests {
         }
     }
 
-    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1)
+    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1, enabled = false)
     public void test1() {
        getTextSearch1();
     }
 
-    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = false)
-    public void test5(String sriptParameter)  {
+    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = true)
+    public void test5(@Optional String sriptParameter)  {
 
-        final String scriptPath = "/users/Olya/Projects/";
+        final String scriptPath = "./src/Task5/";
 
-        String script = "clean.sh";
+        String script = "Task5_1.sh";
         try {
             ProcessBuilder pb = new ProcessBuilder("/bin/bash", scriptPath + script, "","");
             Process p = pb.start();
@@ -179,5 +179,5 @@ public class Tests {
         return textSearch1;
 
     }
-    
+
 }

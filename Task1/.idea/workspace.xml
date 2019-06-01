@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01529a6a-6134-4322-8de6-cd3a31cae214" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/next.task.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task5/Task5_1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task5/Task5_2" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="181" column="4" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+            <state relative-caret-position="307">
+              <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5084#5085#0" expanded="true" />
@@ -179,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="105">
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -271,17 +267,6 @@
             <path>
               <item name="task" type="b2602c69:ProjectViewProjectNode" />
               <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,23 +281,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="onliner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="onliner" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="task" type="b2602c69:ProjectViewProjectNode" />
@@ -335,15 +303,6 @@
               <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tutby" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -358,7 +317,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559394613047" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559419234153" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -388,7 +347,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Tests.test1">
+  <component name="RunManager" selected="TestNG.Tests.test5">
     <configuration name="Task1 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -455,6 +414,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="next.task.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Tests" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests.test1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="next.task.test" />
       <extension name="coverage">
@@ -466,6 +441,24 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Tests" />
       <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.test3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="next.task.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Tests" />
+      <option name="METHOD_NAME" value="test3" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -491,26 +484,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/configs/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TaskNext" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/configs/TestNG.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/TestNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="next.task.test" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/TestNG.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="next.task.test" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/chrome_test.xml" />
@@ -523,11 +496,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Tests.test1" />
         <item itemvalue="TestNG.Tests.test5" />
         <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" />
-        <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/TestNG.xml" />
-        <item itemvalue="TestNG./Users/Olya/Projects/TestProjects/ProjectNext/Task1/configs/TestNG.xml" />
+        <item itemvalue="TestNG.Tests" />
+        <item itemvalue="TestNG.Tests.test3" />
+        <item itemvalue="TestNG.Tests.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -545,35 +518,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_test1 - 2019.05.30 at 22h 07m 21s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 22h 09m 13s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 22h 42m 34s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 23h 42m 47s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 23h 46m 08s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 23h 55m 55s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.30 at 23h 58m 05s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.31 at 00h 42m 06s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Tests_test1 - 2019.05.31 at 00h 43m 21s.xml">
-      <configuration name="Tests.test1" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Tests_test1 - 2019.05.31 at 00h 44m 28s.xml">
       <configuration name="Tests.test1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests_test3 - 2019.06.01 at 22h 49m 59s.xml">
+      <configuration name="Tests.test3" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests - 2019.06.01 at 22h 50m 38s.xml">
+      <configuration name="Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_Olya_Projects_TestProjects_ProjectNext_Task1_src_test_java_chrome_test_xml - 2019.06.01 at 22h 51m 35s.xml">
+      <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_Olya_Projects_TestProjects_ProjectNext_Task1_src_test_java_chrome_test_xml - 2019.06.01 at 22h 51m 58s.xml">
+      <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_Olya_Projects_TestProjects_ProjectNext_Task1_src_test_java_chrome_test_xml - 2019.06.01 at 22h 54m 32s.xml">
+      <configuration name="/Users/Olya/Projects/TestProjects/ProjectNext/Task1/src/test/java/chrome_test.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests_test5 - 2019.06.01 at 22h 57m 05s.xml">
+      <configuration name="Tests.test5" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests_test1 - 2019.06.01 at 22h 57m 44s.xml">
+      <configuration name="Tests.test1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests_test5 - 2019.06.01 at 22h 57m 57s.xml">
+      <configuration name="Tests.test5" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Tests_test5 - 2019.06.01 at 22h 59m 15s.xml">
+      <configuration name="Tests.test5" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -640,6 +613,12 @@
           <line>49</line>
           <properties />
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tests/Tests.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -969,13 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1039,10 +1011,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chrome_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="181" column="4" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+        <state relative-caret-position="307">
+          <caret line="146" column="35" lean-forward="true" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5084#5085#0" expanded="true" />
