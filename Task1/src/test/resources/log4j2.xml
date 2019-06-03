@@ -19,5 +19,9 @@
         <Logger name="onliner.pages" level="debug" additivity="false">
             <appender-ref ref="Console" level="debug"/>
         </Logger>
+
+        <Logger name="ftp" level="debug" additivity="false">
+            <appender-ref ref="Console" level="debug"/>
+        </Logger>
     </Loggers>
 </Configuration>

@@ -1,5 +1,7 @@
 package tests;
 
+import ftp.FTPClient;
+import ftp.FTPFile;
 import onliner.pages.MainPage;
 import onliner.pages.SellerPage;
 import onliner.pages.VideoCardPage;
@@ -9,9 +11,7 @@ import onliner.tools.OfferPageHelper;
 import onliner.tools.Product;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.select.Elements;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,21 +19,10 @@ import org.testng.annotations.*;
 import tutby.pages.FirstPage;
 import tutby.pages.ResultPage;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import javax.swing.text.html.HTML;
-import java.io.IOException;
-import java.time.LocalTime;
+import java.io.*;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.jsoup.nodes.Document;
-
-
-//import static sun.corba.Bridge.get;
-import org.jsoup.nodes.Element;
 
 public class Tests {
 
@@ -57,7 +46,7 @@ public class Tests {
 
     }
 
-    @Test(description = "Task 3: test case for onliner", priority = 3 , parameters = {"rating"}, enabled = false)
+    @Test(description = "Task 3: test case for onliner", priority = 3, parameters = {"rating"}, enabled = false)
     public void test3(String rating) throws InterruptedException {
         /*
         1.осуществить переход (используя интерфейс страницы***):
@@ -95,14 +84,14 @@ public class Tests {
             logger.info("No such products.");
             return;
         }
-        List<Product> productsWithRating = videoCardPage.productsSelectedByRating(products,rating);
+        List<Product> productsWithRating = videoCardPage.productsSelectedByRating(products, rating);
         if (productsWithRating.size() == 0) {
             logger.info("No products with rating 4.5 stars. Products will be selected without rating.");
             productsWithRating = products;
         }
         Product product = videoCardPage.findProductWithCheapestPrice(productsWithRating);
 
-        logger.info("Popular product name with rating upper 4.5 stars and the cheapest price "+ Double.toString(product.price) + " p.: "+ product.name);
+        logger.info("Popular product name with rating upper 4.5 stars and the cheapest price " + Double.toString(product.price) + " p.: " + product.name);
 
 
         /*4. На странице предложений найти продавца с наименьшей ценой за товар.
@@ -124,27 +113,27 @@ public class Tests {
         */
 
         if (!(sellerPage == null)) {
-            logger.info(sellerPage.hrefName + " : "+ sellerPage.getTitleName());
-        }
-        else{
+            logger.info(sellerPage.hrefName + " : " + sellerPage.getTitleName());
+        } else {
             logger.info("No seller for the product.");
         }
     }
 
     @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1, enabled = false)
     public void test1() {
-       getTextSearch1();
+        getTextSearch1();
+        // Steps for searching without selenium is realized in opentutby.js in current folder(you need to run 3 steps there on 3 pages consequently with console).
     }
 
     @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = true)
-    public void test5(@Optional String sriptParameter)  {
+    public void test5(@Optional String scriptParameter) {
 
-        final String scriptPath = "./src/Task5/";
+        final String scriptPath = "/src/Task5/";
 
-        String script1 = "Task5_1.sh";
-        runScript(scriptPath + script1);
-        String script2 = "Task5_1.sh";
-        runScript(scriptPath + script2);
+        String script1 = "Task5_1";
+        runScript(scriptPath + script1, "");
+        String script2 = "Task5_1";
+        runScript(scriptPath + script2, scriptParameter);
 
     }
 
@@ -168,22 +157,143 @@ public class Tests {
 
         ResultPage resultPage = firstPage.navigateToResultPage();
         String textSearch1 = resultPage.getNameOfFirstResult();
-        logger.info("First result of searching with selenium: "+ textSearch1);
+        logger.info("First result of searching with selenium: " + textSearch1);
         return textSearch1;
 
     }
 
-    private void runScript(String script) {
+    private void printStream(InputStream inputStream) throws IOException {
+        String line;
+
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
+    }
+
+    private void runScript(String script, String scriptParameter) {
         try {
-            ProcessBuilder pb = new ProcessBuilder("/bin/bash", script, "","");
-            Process p = pb.start();
-            p.waitFor();
+            String curDir = System.getProperty("user.dir");
+            Process process = Runtime.getRuntime().exec(curDir + script + " " + scriptParameter);
+
+            printStream(process.getErrorStream());
+            printStream(process.getInputStream());
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
+
+    @Test
+    public void test4() throws IOException {
+
+        logger.info("Task 4");
+//        String server = "ftp.byfly.by";
+        String server = "192.168.100.2";
+        int port = 21;
+        String user = "anonymous";
+        String pass = "anonymous";
+
+        FTPClient ftp = new FTPClient();
+
+        ftp.connect(server, port);
+        int replyCode = ftp.getReplyCode();
+        if (replyCode != 220) {
+            System.out.println("Operation failed.");
+            return;
+        }
+        boolean success = ftp.login(user, pass);
+        if (!success) {
+            System.out.println("Failed to log into the server.");
+            return;
+        } else {
+            System.out.println("Logged in server.");
+            logger.info("Logged in server.");
+        }
+
+        if (ftp.isConnected()) {
+            List<FTPFile> directories = ftp.list();
+            for (FTPFile ftpfile : directories) {
+                if (ftpfile.isDirectory()) {
+                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
+                        logger.info("We have enter to " + ftpfile.getName());
+                        ftp.changeWorkingDirectory("..");
+                    } else {
+                        logger.info("Failed to enter to " + ftpfile.getName());
+                    }
+                }
+
+            }
+            if (ftp.makeDirectory("NewDir")) {
+                logger.info("Directory was successfully created.");
+            } else {
+                logger.info("Directory wasn't created.");
+            }
+
+        }
+        ftp.disconnect();
+    }
+
+
+//    @Test()
+//    public void test4() throws IOException {
+//
+//        logger.info("Task 4");
+//        String server = "ftp.byfly.by";
+//        int port = 21;
+//        String user = "anonymous";
+//        String pass = "anonymous";
+//
+//        FTPClient ftp = new FTPClient();
+//        try {
+//            ftp.connect(server, port);
+//            int replyCode = ftp.getReplyCode();
+//            if (!FTPReply.isPositiveCompletion(replyCode)) {
+//                System.out.println("Operation failed.");
+//                return;
+//            }
+//            boolean success = ftp.login(user, pass);
+//            if (!success) {
+//                System.out.println("Failed to log into the server.");
+//                return;
+//            } else {
+//                System.out.println("Logged in server.");
+//                logger.info("Logged in server.");
+//            }
+//
+//            if (ftp.isConnected()) {
+//                FTPFile[] directories = ftp.listDirectories();
+//                for (FTPFile ftpfile: directories) {
+//                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
+//                        logger.info("We have entried to " + ftpfile.getName());
+//                        ftp.changeWorkingDirectory("..");
+//                    }
+//
+//
+//                }
+//                if (ftp.makeDirectory("new directory")) {
+//                    logger.info( "Directory was successfully created.");
+//                }
+//                else {
+//                    logger.info( "Directory wasn't created.");
+//                }
+//
+//            }
+//
+//        }
+//        catch (IOException ex) {
+//            System.out.println("Something went wrong.");
+//            ex.printStackTrace();
+//        }
+//        finally {
+//            try {
+//                ftp.disconnect();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//    }
 
 }

@@ -17,6 +17,5 @@ dependencies {
     testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.+'
     testCompile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
     testCompile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
-    testCompile group: 'org.jsoup', name: 'jsoup', version: '1.8.3'
-    testCompile group: 'com.gargoylesoftware', name: 'HtmlUnit', version: '2.35.0'
+    testCompile group: 'commons-net', name: 'commons-net', version: '3.6'
 }
