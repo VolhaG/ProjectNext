@@ -46,7 +46,7 @@ public class Tests {
 
     }
 
-    @Test(description = "Task 3: test case for onliner", priority = 3, parameters = {"rating"}, enabled = false)
+    @Test(description = "Task 3: test case for onliner", priority = 3, parameters = {"rating"})
     public void test3(String rating) throws InterruptedException {
         /*
         1.осуществить переход (используя интерфейс страницы***):
@@ -119,10 +119,11 @@ public class Tests {
         }
     }
 
-    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1, enabled = false)
+    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1)
     public void test1() {
         getTextSearch1();
         // Steps for searching without selenium is realized in opentutby.js in current folder(you need to run 3 steps there on 3 pages consequently with console).
+        //The results of searching is the same in both cases.
     }
 
     @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = true)
@@ -135,6 +136,56 @@ public class Tests {
         String script2 = "Task5_1";
         runScript(scriptPath + script2, scriptParameter);
 
+    }
+
+    @Test(description = "Task 4: creation ftp client", priority = 1)
+    public void test4() throws IOException {
+
+        logger.info("Task 4");
+        String server = "ftp.byfly.by";
+        // String server = "192.168.100.2";
+        int port = 21;
+        String user = "anonymous";
+        String pass = "anonymous";
+
+        FTPClient ftp = new FTPClient();
+
+        ftp.connect(server, port);
+        int replyCode = ftp.getReplyCode();
+        if (replyCode != 220) {
+            System.out.println("Operation failed.");
+            return;
+        }
+        boolean success = ftp.login(user, pass);
+        if (!success) {
+            System.out.println("Failed to log into the server.");
+            return;
+        } else {
+            System.out.println("Logged in server.");
+            logger.info("Logged in server.");
+        }
+
+        if (ftp.isConnected()) {
+            List<FTPFile> directories = ftp.list();
+            for (FTPFile ftpfile : directories) {
+                if (ftpfile.isDirectory()) {
+                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
+                        logger.info("We have enter to " + ftpfile.getName());
+                        ftp.changeWorkingDirectory("..");
+                    } else {
+                        logger.info("Failed to enter to " + ftpfile.getName());
+                    }
+                }
+
+            }
+            if (ftp.makeDirectory("NewDir")) {
+                logger.info("Directory was successfully created.");
+            } else {
+                logger.info("Directory wasn't created.");
+            }
+
+        }
+        ftp.disconnect();
     }
 
     @AfterMethod
@@ -184,116 +235,5 @@ public class Tests {
             e.printStackTrace();
         }
     }
-
-    @Test
-    public void test4() throws IOException {
-
-        logger.info("Task 4");
-        String server = "ftp.byfly.by";
-       // String server = "192.168.100.2";
-        int port = 21;
-        String user = "anonymous";
-        String pass = "anonymous";
-
-        FTPClient ftp = new FTPClient();
-
-        ftp.connect(server, port);
-        int replyCode = ftp.getReplyCode();
-        if (replyCode != 220) {
-            System.out.println("Operation failed.");
-            return;
-        }
-        boolean success = ftp.login(user, pass);
-        if (!success) {
-            System.out.println("Failed to log into the server.");
-            return;
-        } else {
-            System.out.println("Logged in server.");
-            logger.info("Logged in server.");
-        }
-
-        if (ftp.isConnected()) {
-            List<FTPFile> directories = ftp.list();
-            for (FTPFile ftpfile : directories) {
-                if (ftpfile.isDirectory()) {
-                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
-                        logger.info("We have enter to " + ftpfile.getName());
-                        ftp.changeWorkingDirectory("..");
-                    } else {
-                        logger.info("Failed to enter to " + ftpfile.getName());
-                    }
-                }
-
-            }
-            if (ftp.makeDirectory("NewDir")) {
-                logger.info("Directory was successfully created.");
-            } else {
-                logger.info("Directory wasn't created.");
-            }
-
-        }
-        ftp.disconnect();
-    }
-
-
-//    @Test()
-//    public void test4() throws IOException {
-//
-//        logger.info("Task 4");
-//        String server = "ftp.byfly.by";
-//        int port = 21;
-//        String user = "anonymous";
-//        String pass = "anonymous";
-//
-//        FTPClient ftp = new FTPClient();
-//        try {
-//            ftp.connect(server, port);
-//            int replyCode = ftp.getReplyCode();
-//            if (!FTPReply.isPositiveCompletion(replyCode)) {
-//                System.out.println("Operation failed.");
-//                return;
-//            }
-//            boolean success = ftp.login(user, pass);
-//            if (!success) {
-//                System.out.println("Failed to log into the server.");
-//                return;
-//            } else {
-//                System.out.println("Logged in server.");
-//                logger.info("Logged in server.");
-//            }
-//
-//            if (ftp.isConnected()) {
-//                FTPFile[] directories = ftp.listDirectories();
-//                for (FTPFile ftpfile: directories) {
-//                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
-//                        logger.info("We have entried to " + ftpfile.getName());
-//                        ftp.changeWorkingDirectory("..");
-//                    }
-//
-//
-//                }
-//                if (ftp.makeDirectory("new directory")) {
-//                    logger.info( "Directory was successfully created.");
-//                }
-//                else {
-//                    logger.info( "Directory wasn't created.");
-//                }
-//
-//            }
-//
-//        }
-//        catch (IOException ex) {
-//            System.out.println("Something went wrong.");
-//            ex.printStackTrace();
-//        }
-//        finally {
-//            try {
-//                ftp.disconnect();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }
 
 }
