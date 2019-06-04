@@ -189,8 +189,8 @@ public class Tests {
     public void test4() throws IOException {
 
         logger.info("Task 4");
-//        String server = "ftp.byfly.by";
-        String server = "192.168.100.2";
+        String server = "ftp.byfly.by";
+       // String server = "192.168.100.2";
         int port = 21;
         String user = "anonymous";
         String pass = "anonymous";
