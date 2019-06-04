@@ -65,7 +65,7 @@ public class Tests {
         "Видеопамять" : 4Гб-8Гб
         "Тип видеопамяти" : "GDDR5"
         */
-        videoCardPage.setFilterByDates("2016", "2019");
+        videoCardPage.setFilterByDates("2016", "");
         videoCardPage.setFilterBySizeVC("4 Гб", "8 Гб");
         videoCardPage.setFilterByTypeOfVC();
 

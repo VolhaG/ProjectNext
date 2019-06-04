@@ -10,6 +10,7 @@ import onliner.pages.offer.OfferPage;
 import onliner.tools.Product;
 
 import javax.annotation.Nonnull;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,9 +146,8 @@ public class VideoCardPage extends BasePage {
 
     public List<Product> productsSelectedByRating(List<Product> products, String s) {
         List<Product> newProducts = new ArrayList<Product>();
-
         for (Product item : products) {
-            if (item.rating.equals(s)) {
+            if (Integer.parseInt(item.rating) >= Integer.parseInt(s)) {
                 newProducts.add(item);
                 logger.debug("Product selected by rating: " + item.name);
             }
