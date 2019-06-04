@@ -1,7 +1,5 @@
 package tests;
 
-import ftp.FTPClient;
-import ftp.FTPFile;
 import onliner.pages.MainPage;
 import onliner.pages.SellerPage;
 import onliner.pages.VideoCardPage;
@@ -16,17 +14,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-import tutby.pages.FirstPage;
-import tutby.pages.ResultPage;
-
-import java.io.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Tests {
+public class Task3 {
 
-    private static final Logger logger = LogManager.getLogger(Tests.class);
+    private static final Logger logger = LogManager.getLogger(Task1.class);
 
     private WebDriver webDriver;
 
@@ -119,121 +113,10 @@ public class Tests {
         }
     }
 
-    @Test(description = "Task 1: to compare result of searching on tut.by with selenium and without", priority = 1)
-    public void test1() {
-        getTextSearch1();
-        // Steps for searching without selenium is realized in opentutby.js in current folder(you need to run 3 steps there on 3 pages consequently with console).
-        //The results of searching is the same in both cases.
-    }
-
-    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = true)
-    public void test5(@Optional String scriptParameter) {
-
-        final String scriptPath = "/src/Task5/";
-
-        String script1 = "Task5_1";
-        runScript(scriptPath + script1, "");
-        String script2 = "Task5_1";
-        runScript(scriptPath + script2, scriptParameter);
-
-    }
-
-    @Test(description = "Task 4: creation ftp client", priority = 1)
-    public void test4() throws IOException {
-
-        logger.info("Task 4");
-        String server = "ftp.byfly.by";
-        // String server = "192.168.100.2";
-        int port = 21;
-        String user = "anonymous";
-        String pass = "anonymous";
-
-        FTPClient ftp = new FTPClient();
-
-        ftp.connect(server, port);
-        int replyCode = ftp.getReplyCode();
-        if (replyCode != 220) {
-            System.out.println("Operation failed.");
-            return;
-        }
-        boolean success = ftp.login(user, pass);
-        if (!success) {
-            System.out.println("Failed to log into the server.");
-            return;
-        } else {
-            System.out.println("Logged in server.");
-            logger.info("Logged in server.");
-        }
-
-        if (ftp.isConnected()) {
-            List<FTPFile> directories = ftp.list();
-            for (FTPFile ftpfile : directories) {
-                if (ftpfile.isDirectory()) {
-                    if (ftp.changeWorkingDirectory(ftpfile.getName())) {
-                        logger.info("We have enter to " + ftpfile.getName());
-                        ftp.changeWorkingDirectory("..");
-                    } else {
-                        logger.info("Failed to enter to " + ftpfile.getName());
-                    }
-                }
-
-            }
-            if (ftp.makeDirectory("NewDir")) {
-                logger.info("Directory was successfully created.");
-            } else {
-                logger.info("Directory wasn't created.");
-            }
-
-        }
-        ftp.disconnect();
-    }
 
     @AfterMethod
     public void afterTest() {
         webDriver.quit();
-    }
-
-
-    public String getTextSearch1() {
-        /*
-        1.осуществить переход (используя интерфейс страницы***):
-        "Компьютеры и сети"->"Комплектующие"->"Видеокарты"
-        */
-        logger.info("Task 1");
-        webDriver.get("https://tut.by/");
-        logger.info("Navigate to tut.by");
-
-        FirstPage firstPage = new FirstPage(webDriver);
-        firstPage.enterWordForSearch("лукашенко");
-
-        ResultPage resultPage = firstPage.navigateToResultPage();
-        String textSearch1 = resultPage.getNameOfFirstResult();
-        logger.info("First result of searching with selenium: " + textSearch1);
-        return textSearch1;
-
-    }
-
-    private void printStream(InputStream inputStream) throws IOException {
-        String line;
-
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-            }
-        }
-    }
-
-    private void runScript(String script, String scriptParameter) {
-        try {
-            String curDir = System.getProperty("user.dir");
-            Process process = Runtime.getRuntime().exec(curDir + script + " " + scriptParameter);
-
-            printStream(process.getErrorStream());
-            printStream(process.getInputStream());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }
