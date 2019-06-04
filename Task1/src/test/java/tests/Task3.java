@@ -40,7 +40,7 @@ public class Task3 {
 
     }
 
-    @Test(description = "Task 3: test case for onliner", priority = 3, parameters = {"rating"})
+    @Test(description = "Task 3: test case for onliner", parameters = {"rating"})
     public void test3(String rating) throws InterruptedException {
         /*
         1.осуществить переход (используя интерфейс страницы***):

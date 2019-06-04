@@ -16,7 +16,7 @@ public class Task4 {
 
     private static final Logger logger = LogManager.getLogger(Task1.class);
 
-    @Test(description = "Task 4: creation ftp client", priority = 1)
+    @Test(description = "Task 4: creation ftp client")
     public void test4() throws IOException {
 
         logger.info("Task 4");

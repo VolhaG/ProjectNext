@@ -8,7 +8,7 @@ import java.io.*;
 
 public class Task5 {
 
-    @Test(description = "Task 5: two scripts", priority = 5, parameters = {"scriptParameter"}, enabled = true)
+    @Test(description = "Task 5: two scripts", parameters = {"scriptParameter"}, enabled = true)
     public void test5(@Optional String scriptParameter) {
 
         final String scriptPath = "/src/Task5/";
